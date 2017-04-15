@@ -1,8 +1,0 @@
-file_transfer.egg-info/PKG-INFO
-file_transfer.egg-info/SOURCES.txt
-file_transfer.egg-info/dependency_links.txt
-file_transfer.egg-info/top_level.txt
-src/__init__.py
-src/app.py
-src/routes.py
-src/settings.py
