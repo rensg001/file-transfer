@@ -8,7 +8,7 @@ from tornado import httpserver
 from tornado import ioloop
 from tornado.web import Application
 
-from src.routes import urls
+from routes import urls
 
 
 def main():

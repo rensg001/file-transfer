@@ -4,6 +4,6 @@
 #   Author  :   shanguiren
 #   Date    :   17/4/14
 from tornado.web import URLSpec
-from src.handlers import files
+from handlers import files
 
 urls = [URLSpec("/file", files.FilesHandler)]
