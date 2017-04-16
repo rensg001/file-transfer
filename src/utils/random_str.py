@@ -16,9 +16,10 @@ def get_random_str(str_len):
         str 随机字符串
     """
 
-    strings = string.ascii_letters + string.digits + string.punctuation
+    strings = string.ascii_letters + string.digits
     result = []
     while str_len > 0:
         index = random.randint(0, len(strings) - 1)
         result.append(strings[index])
-    return result
+        str_len -= 1
+    return "".join(result)

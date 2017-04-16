@@ -4,28 +4,25 @@
 #   Author  :   shanguiren
 #   Date    :   17/4/14
 
-import time
-import logging
+import base64
+
+import settings
 
 from tornado.web import RequestHandler
-from src.utils import random_str
 
-
-class File(object):
-    def __init__(self, file_name, content):
-        self._file_name = file_name
-        self._content = content
-
-    def _get_store_name(self):
-        """获取新文件名称"""
-
-        return random_str.get_random_str(20) + str(time.time())
+from services import file as file_service
 
 
 class FilesHandler(RequestHandler):
     """处理上传文件"""
 
-    def get(self):
-        files = self.request.files["upload_file"]
-        for file in files:
-            pass
+    def post(self):
+
+        file_b64 = self.get_argument("file_b64")
+        file_name = self.get_argument("file_name")
+        file = base64.b64decode(file_b64)
+
+        file_sv = file_service.FileService(file_name, file)
+        file_sv.save(root_path=settings.static_root)
+
+        return

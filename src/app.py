@@ -16,3 +16,7 @@ def main():
     http_server = httpserver.HTTPServer(app)
     http_server.listen(8080)
     ioloop.IOLoop.current().start()
+
+
+if __name__ == "__main__":
+    main()
