@@ -11,4 +11,4 @@ parent_dir = "/".join(curdir.split("/")[:-1])
 
 debug = True
 
-static_root = os.path.join(parent_dir, "uploads")
+static_root = os.path.join(parent_dir, "upload")
